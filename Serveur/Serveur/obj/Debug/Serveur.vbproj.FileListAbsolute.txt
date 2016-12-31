@@ -1,0 +1,24 @@
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.exe.config
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.exe
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.pdb
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.xml
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.Resources.resources
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.vbproj.GenerateResource.Cache
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.exe
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.xml
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.pdb
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.vbprojResolveAssemblyReference.cache
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\bin\Debug\Serveur.exe.config
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\obj\Debug\Serveur.exe
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\obj\Debug\Serveur.xml
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\obj\Debug\Serveur.pdb
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\bin\Debug\Serveur.exe
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\bin\Debug\Serveur.pdb
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\bin\Debug\Serveur.xml
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\obj\Debug\Serveur.vbprojResolveAssemblyReference.cache
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\obj\Debug\Serveur.Resources.resources
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\Serveur\Serveur\obj\Debug\Serveur.vbproj.GenerateResource.Cache
+C:\Users\Mathias\Downloads\Serveur\Serveur\bin\Debug\Serveur.exe.config
+C:\Users\Mathias\Downloads\Serveur\Serveur\obj\Debug\Serveur.exe
+C:\Users\Mathias\Downloads\Serveur\Serveur\obj\Debug\Serveur.xml
+C:\Users\Mathias\Downloads\Serveur\Serveur\obj\Debug\Serveur.pdb

@@ -1,0 +1,22 @@
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.exe.config
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.exe
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.pdb
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.xml
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Resources.resources
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbproj.GenerateResource.Cache
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.exe
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.xml
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.pdb
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbprojResolveAssemblyReference.cache
+C:\Users\TOSHIBA\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Client1.resources
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\bin\Debug\JeuReseau.exe.config
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.exe
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.xml
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.pdb
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\bin\Debug\JeuReseau.exe
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\bin\Debug\JeuReseau.pdb
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\bin\Debug\JeuReseau.xml
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbprojResolveAssemblyReference.cache
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Client1.resources
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Resources.resources
+C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbproj.GenerateResource.Cache
