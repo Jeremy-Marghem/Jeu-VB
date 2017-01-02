@@ -146,15 +146,15 @@ Module Module1
                 'On incremente l'emplacement du joueur 1
                 emplacementJoueur1 += CInt(val)
 
-                'Au tour du joueur 2 de jeter le dé
-                Dim phrase2 As String
-                phrase2 = "yourTurn-0"
-                For i = phrase2.Length To 29
-                    phrase2 += " "
+                'On signale au joueur 1 que ce n'est plus a lui de jouer
+                Dim phrase4 As String
+                phrase4 = "notYourTurn-0"
+                For i = phrase4.Length To 29
+                    phrase4 += " "
                 Next
-                Dim mes(64) As Byte
-                mes = System.Text.Encoding.ASCII.GetBytes(phrase2)
-                socketClient2.Send(mes)
+                Dim mess(64) As Byte
+                mess = System.Text.Encoding.ASCII.GetBytes(phrase4)
+                socketClient1.Send(mess)
 
                 'Envoi du lancer de dé effectué par le joueur 1 au joueur 2
                 Dim phrase3 As String
@@ -166,15 +166,79 @@ Module Module1
                 messa = System.Text.Encoding.ASCII.GetBytes(phrase3)
                 socketClient2.Send(messa)
 
-                'On signale au joueur 1 que ce n'est plus a lui de jouer
-                Dim phrase4 As String
-                phrase4 = "notYourTurn-0"
-                For i = phrase4.Length To 29
-                    phrase4 += " "
+                'on verifie si l'emplacement correspond a une case speciale
+                If emplacementJoueur1 = 6 Or emplacementJoueur1 = 16 Or emplacementJoueur1 = 25 Or emplacementJoueur1 = 36 Then
+
+                    'le joueur avance de 5 cases
+                    'emplacementJoueur1 += 5
+
+                ElseIf emplacementJoueur1 = 12 Or emplacementJoueur1 = 42 Or emplacementJoueur1 = 52 Then
+
+                    'le joueur chute de 5 cases
+                    emplacementJoueur1 -= 5
+                    Dim chute As String
+                    chute = "chute-0"
+                    For i = chute.Length To 29
+                        chute += " "
+                    Next
+                    Dim chuteMessage(64) As Byte
+                    chuteMessage = System.Text.Encoding.ASCII.GetBytes(chute)
+                    socketClient1.Send(chuteMessage)
+
+                    'on signale au joueur 2 que le joueur 1 a chuté de 5 cases
+                    Dim chuteAdverse As String
+                    chuteAdverse = "chuteAdverse-0"
+                    For i = chuteAdverse.Length To 29
+                        chuteAdverse += " "
+                    Next
+                    Dim chuteMessage2(64) As Byte
+                    chuteMessage2 = System.Text.Encoding.ASCII.GetBytes(chuteAdverse)
+                    socketClient2.Send(chuteMessage2)
+                    Console.WriteLine("Envoi chute de 5 à joueur 1")
+
+                ElseIf emplacementJoueur1 = 58 Then
+
+                    'le joueur retombe à la case depart
+                    emplacementJoueur1 = 0
+
+                    'on signale au joueur 1 q'uil chute
+                    Dim restart As String = ""
+                    restart = "restart-0"
+                    For i = restart.Length To 29
+                        restart += " "
+                    Next
+                    Dim restartMessage(64) As Byte
+                    restartMessage = System.Text.Encoding.ASCII.GetBytes(restart)
+                    socketClient1.Send(restartMessage)
+                    Console.WriteLine("Envoi chute à 0 à joueur 1")
+
+                    'on signale au joueur 2 que le joueur 1 retombe à la case départ
+                    Dim restartAdverse As String = ""
+                    restartAdverse = "restartAdverse-0"
+                    For i = restartAdverse.Length To 29
+                        restartAdverse += " "
+                    Next
+                    Dim restartAdverseMessage(64) As Byte
+                    restartAdverseMessage = System.Text.Encoding.ASCII.GetBytes(restartAdverse)
+                    socketClient2.Send(restartAdverseMessage)
+                    Console.WriteLine("Envoi chute à 0 à joueur 2")
+
+                ElseIf emplacementJoueur1 = 60 Then
+
+                    'le joueur 1 a gagné la partie
+
+                End If
+
+                System.Threading.Thread.Sleep(1000)
+                'Au tour du joueur 2 de jeter le dé
+                Dim phrase2 As String
+                phrase2 = "yourTurn-" + CStr(emplacementJoueur1)
+                For i = phrase2.Length To 29
+                    phrase2 += " "
                 Next
-                Dim mess(64) As Byte
-                mess = System.Text.Encoding.ASCII.GetBytes(phrase4)
-                socketClient1.Send(mess)
+                Dim mes(64) As Byte
+                mes = System.Text.Encoding.ASCII.GetBytes(phrase2)
+                socketClient2.Send(mes)
 
         End Select
     End Sub
@@ -212,16 +276,6 @@ Module Module1
                 mess = System.Text.Encoding.ASCII.GetBytes(phrase7)
                 socketClient2.Send(mess)
 
-                'Au tour du joueur 1 de jeter le dé
-                Dim phrase9 As String
-                phrase9 = "yourTurn-" + CStr(emplacementJoueur1)
-                For i = phrase9.Length To 29
-                    phrase9 += " "
-                Next
-                Dim mes(64) As Byte
-                mes = System.Text.Encoding.ASCII.GetBytes(phrase9)
-                socketClient1.Send(mes)
-
                 'Envoi du lancer de dé effectué par le joueur 2 au joueur 1
                 Dim phrase10 As String
                 phrase10 = "lancerAdversaire-" + val
@@ -236,12 +290,14 @@ Module Module1
                 If emplacementJoueur2 = 6 Or emplacementJoueur2 = 16 Or emplacementJoueur2 = 25 Or emplacementJoueur2 = 36 Then
 
                     'le joueur avance de 5 cases
-                    emplacementJoueur2 += 5
+                    ' emplacementJoueur2 += 5
 
                 ElseIf emplacementJoueur2 = 12 Or emplacementJoueur2 = 42 Or emplacementJoueur2 = 52 Then
 
                     'le joueur chute de 5 cases
                     emplacementJoueur2 -= 5
+
+                    'on signale au joueur 2 qu'il chute
                     Dim chute As String
                     chute = "chute-0"
                     For i = chute.Length To 29
@@ -250,6 +306,7 @@ Module Module1
                     Dim chuteMessage(64) As Byte
                     chuteMessage = System.Text.Encoding.ASCII.GetBytes(chute)
                     socketClient2.Send(chuteMessage)
+                    System.Threading.Thread.Sleep(1000)
 
                     'on signale au joueur 1 que le joueur 2 a chuté de 5 cases
                     Dim chuteAdverse As String
@@ -265,6 +322,8 @@ Module Module1
 
                     'le joueur retombe à la case depart
                     emplacementJoueur2 = 0
+
+                    'on signale au joueur 2 qu'il chute
                     Dim restart As String
                     restart = "restart-0"
                     For i = restart.Length To 29
@@ -274,6 +333,7 @@ Module Module1
                     restartMessage = System.Text.Encoding.ASCII.GetBytes(restart)
                     socketClient2.Send(restartMessage)
                     Console.WriteLine("Envoi chute à 0 à joueur 2")
+                    System.Threading.Thread.Sleep(3000)
 
                     'on signale au joueur 1 que le joueur 2 retombe à la case départ
                     Dim restartAdverse As String
@@ -290,6 +350,18 @@ Module Module1
                     'le joueur 2 a gagné la partie
 
                 End If
+
+                System.Threading.Thread.Sleep(1000)
+                'Au tour du joueur 1 de jeter le dé
+                Dim phrase9 As String
+                phrase9 = "yourTurn-" + CStr(emplacementJoueur2)
+                For i = phrase9.Length To 29
+                    phrase9 += " "
+                Next
+                Dim mes(64) As Byte
+                mes = System.Text.Encoding.ASCII.GetBytes(phrase9)
+                socketClient1.Send(mes)
+
         End Select
     End Sub
     Private Sub EcouteClient1()
@@ -300,8 +372,9 @@ Module Module1
                 socketClient1.Receive(msg)
                 traitementJoueur1(msg)
             End While
-        Catch
-            Console.WriteLine("Perte du client 1...")
+        Catch ex As Exception
+            Console.WriteLine("Perte du client 1... = ")
+            Console.WriteLine(ex)
         End Try
     End Sub
     Private Sub EcouteClient2()

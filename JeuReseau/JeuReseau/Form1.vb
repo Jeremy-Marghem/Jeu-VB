@@ -130,7 +130,7 @@ Public Class Client1
         Select Case id
             Case "joueur"
 
-                Invoke(Sub() notif("Vous êtes le joueur " + val))
+                Invoke(Sub() notif("Vous êtes le joueur " + CStr(val.Chars(0))))
                 Invoke(Sub() setDes1("0"))
                 Invoke(Sub() setDes2("0"))
                 Invoke(Sub() setLabelJoueur1("Votre dés : "))
@@ -149,7 +149,7 @@ Public Class Client1
                 traitementServeur(msg)
             End While
         Catch
-            notif("Perte de connexion avec le serveur...")
+            Invoke(Sub() notif("Perte de connexion avec le serveur..."))
         End Try
 
     End Sub
@@ -157,6 +157,7 @@ Public Class Client1
 
         'transformation du message recu en String
         Dim message = System.Text.Encoding.ASCII.GetString(msg)
+
         message = message.Replace(" ", "")
         Console.WriteLine("Message recu par le serveur => " + message)
 
@@ -173,48 +174,84 @@ Public Class Client1
         Select Case id
             Case "yourTurn"
 
+                'on active le bouton de lancer
                 Invoke(Sub() activateButton())
-
-            Case "notYourTurn"
-
-                Invoke(Sub() desactivateButton())
-
-            Case "lancerAdversaire"
-
-                Invoke(Sub() setDes2(val))
-                Dim oldEmplacement = emplacementAdversaire
-                emplacementAdversaire += val
-
                 'ancien emplacement adverse eteint
-                Invoke(Sub() setCaseOff2(oldEmplacement))
+                Invoke(Sub() setCaseOff2(emplacementAdversaire))
+
+                emplacementAdversaire = CInt(val)
 
                 'nouvel emplacement adverse allumé
                 Invoke(Sub() setCaseOn2(emplacementAdversaire))
 
+            Case "notYourTurn"
+
+                'on desactive le bouton de lancer 
+                Invoke(Sub() desactivateButton())
+
+            Case "lancerAdversaire"
+
+                'mise a jour du label du des adverse
+                Invoke(Sub() setDes2(val))
+
             Case "chute"
 
+                'affichage d'une notification
                 Invoke(Sub() notif("Aïe, vous chutez de 5 cases !"))
                 System.Threading.Thread.Sleep(2000)
+
+                'on eteint l'emplacement actuel
                 setCaseOff1(emplacement)
+
+                'on decremente l'emplacement
                 emplacement -= 5
+
+                'on allume le nouvel emplacement
                 setCaseOn1(emplacement)
+
+            Case "chuteAdverse"
+
+                'affichage d'une notification
+                Invoke(Sub() notif("Votre adversaire chute de 5 cases !"))
+                System.Threading.Thread.Sleep(2000)
 
             Case "restart"
 
+                'affichage d'une notification
                 Invoke(Sub() notif("Catastrophe, vous repartez du début !!"))
                 System.Threading.Thread.Sleep(2000)
+
+                'on eteint l'emplacement actuel
                 setCaseOff1(emplacement)
+
+                'on remet l'emplacement à 0
                 emplacement = 0
+
+                'on allume le nouvel emplacement
                 setCaseOn1(emplacement)
 
+            Case "restartAdverse"
+
+                'affichage d'une notification
+                Invoke(Sub() notif("Le joueur adverse repart au début !!"))
+                System.Threading.Thread.Sleep(2000)
+
+                'on eteint l'emplacement actuel
+                setCaseOff2(emplacementAdversaire)
+
+                'on remet l'emplacement à 0
+                emplacementAdversaire = 0
+
+                'on allume le nouvel emplacement
+                setCaseOn2(emplacementAdversaire)
         End Select
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         'génération d'un nombre aléatoire
-        Dim val As Integer = 58
-        'Dim random As New Random()
-        'val = random.Next(1, 6)
+        Dim val As Integer = 12
+        Dim random As New Random()
+        val = random.Next(1, 6)
 
         'envoi du resultat du lancer au serveur
         Envoi("valeur", CStr(val))

@@ -3,5 +3,9 @@ Jeu de l'oie developpé dans le cadre du cours de Reseau - Condorcet janvier 201
 
 To do
 
-* gestion cases speciales
+* gestion cases saut
 * gestion de la fin du jeu
+
+Done
+	
+* gestion cases chute
