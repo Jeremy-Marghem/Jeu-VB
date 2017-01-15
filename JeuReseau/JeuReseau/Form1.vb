@@ -131,6 +131,7 @@ Public Class Client1
             Case "joueur"
 
                 Invoke(Sub() notif("Vous êtes le joueur " + CStr(val.Chars(0))))
+                Invoke(Sub() joueur(val.Chars(0)))
                 Invoke(Sub() setDes1("0"))
                 Invoke(Sub() setDes2("0"))
                 Invoke(Sub() setLabelJoueur1("Votre dés : "))
@@ -149,7 +150,6 @@ Public Class Client1
                 traitementServeur(msg)
             End While
         Catch
-            Invoke(Sub() notif("Perte de connexion avec le serveur..."))
         End Try
 
     End Sub
@@ -176,9 +176,14 @@ Public Class Client1
 
                 'on active le bouton de lancer
                 Invoke(Sub() activateButton())
+
+                'affiche d'une notification
+                Invoke(Sub() notif("A vous de jouer"))
+
                 'ancien emplacement adverse eteint
                 Invoke(Sub() setCaseOff2(emplacementAdversaire))
 
+                'on assigne le nouvel emplacement de l'adversaire à sa variable
                 emplacementAdversaire = CInt(val)
 
                 'nouvel emplacement adverse allumé
@@ -215,6 +220,27 @@ Public Class Client1
                 Invoke(Sub() notif("Votre adversaire chute de 5 cases !"))
                 System.Threading.Thread.Sleep(2000)
 
+            Case "bond"
+
+                'affichage d'une notification
+                Invoke(Sub() notif("Cool, vous bondissez de 5 cases !"))
+                System.Threading.Thread.Sleep(2000)
+
+                'on eteint l'emplacement actuel
+                setCaseOff1(emplacement)
+
+                'on decremente l'emplacement
+                emplacement += 5
+
+                'on allume le nouvel emplacement
+                setCaseOn1(emplacement)
+
+            Case "bondAdverse"
+
+                'affichage d'une notification
+                Invoke(Sub() notif("Votre adversaire bondi de 5 cases !"))
+                System.Threading.Thread.Sleep(2000)
+
             Case "restart"
 
                 'affichage d'une notification
@@ -244,14 +270,33 @@ Public Class Client1
 
                 'on allume le nouvel emplacement
                 setCaseOn2(emplacementAdversaire)
+
+            Case "youWin"
+
+                'affichage d'une notification
+                Invoke(Sub() notif("VOUS AVEZ GAGNE!"))
+                System.Threading.Thread.Sleep(2000)
+
+                'on remet les pions à 0
+                Invoke(Sub() restartGame())
+
+            Case "youLose"
+
+                'affichage d'une notification
+                Invoke(Sub() notif("VOUS AVEZ PERDU!"))
+                System.Threading.Thread.Sleep(2000)
+
+                'on remet les pions à 0
+                Invoke(Sub() restartGame())
+
         End Select
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
         'génération d'un nombre aléatoire
-        Dim val As Integer = 12
+        Dim val As Integer
         Dim random As New Random()
-        val = random.Next(1, 6)
+        val = random.Next(1, 12)
 
         'envoi du resultat du lancer au serveur
         Envoi("valeur", CStr(val))
@@ -262,16 +307,23 @@ Public Class Client1
         'desactivation du bouton de lancer
         Button1.Enabled = False
 
+        'on affiche une notification
+        Invoke(Sub() notif("Au tour de l'adversaire"))
+
         'sauvegarde de l'ancien emplacement + incrementation de l'emplacement actuel
         Dim oldEmplacement As Integer = emplacement
         emplacement += val
 
-        'ancien emplacement eteint
-        setCaseOff1(oldEmplacement)
+        If (emplacement < 60) Then
+            'ancien emplacement eteint
+            setCaseOff1(oldEmplacement)
 
-        'nouvel emplacement allumé
-        setCaseOn1(emplacement)
-
+            'nouvel emplacement allumé
+            setCaseOn1(emplacement)
+        Else
+            'ancien emplacement eteint
+            setCaseOff1(oldEmplacement)
+        End If
     End Sub
     Private Sub setCaseOn1(ByVal val As Integer)
 
@@ -295,6 +347,21 @@ Public Class Client1
 
         'on désactive la case correspondante (gris ardoise) au lancer de dé de l'adversaire
         casesJoueur2(val).BackColor = Color.DarkSlateGray
+
+    End Sub
+    Private Sub joueur(ByVal val As String)
+        LabelJ.Text = "Joueur " + val
+    End Sub
+    Private Sub restartGame()
+
+        setCaseOff1(emplacement)
+        setCaseOff2(emplacementAdversaire)
+
+        emplacement = 0
+        emplacementAdversaire = 0
+
+        setCaseOn1(emplacement)
+        setCaseOn2(emplacementAdversaire)
 
     End Sub
 End Class

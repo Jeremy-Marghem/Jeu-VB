@@ -22,3 +22,13 @@ C:\Users\Mathias\Downloads\Serveur\Serveur\bin\Debug\Serveur.exe.config
 C:\Users\Mathias\Downloads\Serveur\Serveur\obj\Debug\Serveur.exe
 C:\Users\Mathias\Downloads\Serveur\Serveur\obj\Debug\Serveur.xml
 C:\Users\Mathias\Downloads\Serveur\Serveur\obj\Debug\Serveur.pdb
+D:\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.exe.config
+D:\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.exe
+D:\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.xml
+D:\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.pdb
+D:\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.exe
+D:\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.pdb
+D:\OneDrive\Programmation\VB\Serveur\Serveur\bin\Debug\Serveur.xml
+D:\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.vbprojResolveAssemblyReference.cache
+D:\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.Resources.resources
+D:\OneDrive\Programmation\VB\Serveur\Serveur\obj\Debug\Serveur.vbproj.GenerateResource.Cache

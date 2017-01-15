@@ -20,3 +20,14 @@ C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\D
 C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Client1.resources
 C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Resources.resources
 C:\Users\Mathias\Documents\Visual Studio 2015\Projects\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbproj.GenerateResource.Cache
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.exe.config
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.exe
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.xml
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.pdb
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.exe
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.pdb
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\bin\Debug\JeuReseau.xml
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbprojResolveAssemblyReference.cache
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Client1.resources
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.Resources.resources
+D:\OneDrive\Programmation\VB\JeuReseau\JeuReseau\obj\Debug\JeuReseau.vbproj.GenerateResource.Cache
